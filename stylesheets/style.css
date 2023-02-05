@@ -15,6 +15,7 @@ h1 {
 h2 {
     font-size: larger;
 }
+
 .my-info{
     line-height: 30px;
     display: block;
@@ -26,14 +27,15 @@ h2 {
 .my-info-content{
     text-align: center;
 }
+.my-info-content hr{
+    border: solid;
+    color: rgb(1, 142, 142);
+}
 .main-img{
     margin: 10px 0 0 0;
     width: 200px;
 }
-.alt-hr{
-    border: solid;
-    color: rgb(1, 142, 142);
-}
+
 .maindiv {
     display: block;
     float: right;
@@ -43,6 +45,6 @@ h2 {
 .maindiv-content{
     margin: 0 5% 0 5%;
 }
-.description{
+.maindiv-content p{
     margin-left: 15px;
 }
