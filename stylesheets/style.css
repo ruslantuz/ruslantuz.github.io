@@ -1,0 +1,48 @@
+html, body{
+    font-family: "Lucida Sans Unicode";
+    background-color:ghostwhite;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding: 0px;
+    margin: 0;
+    font-weight: 600
+}
+h1 {
+    text-align: center;
+    font-size: x-large;
+}
+h2 {
+    font-size: larger;
+}
+.my-info{
+    line-height: 30px;
+    display: block;
+    width: 25%;
+    float: left;
+    margin: 0 0 0 5%;
+    background-color:rgb(7, 217, 217);
+}
+.my-info-content{
+    text-align: center;
+}
+.main-img{
+    margin: 10px 0 0 0;
+    width: 200px;
+}
+.alt-hr{
+    border: solid;
+    color: rgb(1, 142, 142);
+}
+.maindiv {
+    display: block;
+    float: right;
+    width: 70%;
+    margin: 0 5% 0 0;
+}
+.maindiv-content{
+    margin: 0 5% 0 5%;
+}
+.description{
+    margin-left: 15px;
+}
