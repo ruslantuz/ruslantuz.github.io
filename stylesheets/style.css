@@ -10,11 +10,24 @@ html, body{
 }
 h1 {
     text-align: center;
-    font-size: x-large;
+    font-size: 22px;
 }
 h2 {
-    font-size: larger;
+    font-size: 17px;
 }
+li{
+    font-size: 17px;
+    line-height: 35px;
+    margin-left: -20px;
+}
+hr{
+    border: 0;
+    height: 1px;
+    width: 90%;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
 
 .my-info{
     line-height: 30px;
@@ -26,10 +39,6 @@ h2 {
 }
 .my-info-content{
     text-align: center;
-}
-.my-info-content hr{
-    border: solid;
-    color: rgb(1, 142, 142);
 }
 .main-img{
     margin: 10px 0 0 0;
@@ -47,4 +56,5 @@ h2 {
 }
 .maindiv-content p{
     margin-left: 15px;
+    font-size: 16px;
 }
