@@ -1,0 +1,60 @@
+html, body{
+    font-family: "Lucida Sans Unicode";
+    background-color:ghostwhite;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding: 0px;
+    margin: 0;
+    font-weight: 600
+}
+h1 {
+    text-align: center;
+    font-size: 22px;
+}
+h2 {
+    font-size: 17px;
+}
+li{
+    font-size: 17px;
+    line-height: 35px;
+    margin-left: -20px;
+}
+hr{
+    border: 0;
+    height: 1px;
+    width: 90%;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+
+.my-info{
+    line-height: 30px;
+    display: block;
+    width: 25%;
+    float: left;
+    margin: 0 0 0 5%;
+    background-color:rgb(7, 217, 217);
+}
+.my-info-content{
+    text-align: center;
+}
+.main-img{
+    margin: 10px 0 0 0;
+    width: 200px;
+}
+
+.maindiv {
+    display: block;
+    float: right;
+    width: 70%;
+    margin: 0 5% 0 0;
+}
+.maindiv-content{
+    margin: 0 5% 0 5%;
+}
+.maindiv-content p{
+    margin-left: 15px;
+    font-size: 16px;
+}
