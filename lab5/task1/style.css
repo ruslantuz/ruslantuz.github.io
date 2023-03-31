@@ -1,0 +1,59 @@
+table{
+    font-size: 13px;
+}
+h1{
+    line-height: 10px;
+}
+th{
+    background-color: rgba(148,204,232,255);
+    color: white;
+    font-weight: bold;
+}
+td:first-child{
+    background-color: rgba(148,204,232,255);
+    color: white;
+}
+td:first-child, th:first-child{
+    width: 120px;
+    text-align: left;
+    padding-left: 20px;
+}
+td,th{
+    width: 60px;
+    height: 30px;
+}
+td{
+    background-color: rgba(205,230,244,255);
+    text-align: center;
+}
+
+.table {
+    border: 1px solid white;
+    width: 420px;
+    font-size: 13px;
+}
+.header .cell, .cell:first-child{
+    background-color: rgba(148,204,232,255);
+    color: white;
+    font-weight: bold;
+    
+}
+
+.row, .header {
+    float: left;
+    width: 100%;
+}
+.cell {
+    float: left;
+    width: 65px;
+    border: 1px solid white;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: rgba(205,230,244,255);
+    text-align: center;
+}
+.cell:first-child {
+    width: 140px;
+    text-align: left;
+    padding-left: 20px;
+}
