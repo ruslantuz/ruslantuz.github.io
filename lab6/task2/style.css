@@ -1,0 +1,40 @@
+.clouds{
+    height: 100px;
+    position: absolute;
+    left: 8%;
+    z-index: -1;
+}
+.water{
+    top: 370px;
+    position: absolute;
+    z-index: 1;
+
+}
+.wooden-ship{
+    height: 95px;
+    position: absolute;
+    top: 285px;
+    left: -175px;
+    z-index: 0;
+}
+.world{
+    height: 300px;
+    top: 25%;
+    left: 0;
+    position: relative;
+    z-index: -2;
+    padding-top: 100px;
+    background-color: rgba(129,204,199,255);
+}
+svg{
+    width: 500px;
+    position: absolute;
+    
+
+}
+/* div{
+    height: 300px;
+    position: relative;
+    background-color: rgba(129,204,199,255);
+    width: 500px;
+} */
