@@ -1,0 +1,45 @@
+div{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+}
+.fullwrap{
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+.header, .footer{
+    position: absolute;
+    left: 10px;
+    width: 480px;
+}
+.header{
+    top: 10px;
+    height: 50px;
+}
+.wrap{
+    position: relative;
+    top: 70px;
+    left: 0;
+    height: 400px;
+    width: 480px;
+}
+.footer{
+    bottom: 15px;
+    height: 105px;
+}
+.main, .sidebar{
+    height: 380px;
+    position: absolute;
+    top: 10px;
+}
+.main{
+    width: 240px;
+    left: 10px;
+}
+.sidebar{
+    width: 200px;
+    right: 10px;
+}
