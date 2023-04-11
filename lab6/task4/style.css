@@ -84,6 +84,13 @@ input{
 .btn2{
     border: 2px solid rgba(94,156,158,255);
     border-radius: 7px;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+    color: rgba(94,156,158,255);
     position: absolute;
     top: 12.5px;
 }
