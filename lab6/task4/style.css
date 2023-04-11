@@ -1,6 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Sans+Miao&display=swap');
-input, .body, .btn{
+input, .body, .btn, .btn2{
     border: 2px solid rgba(94,156,158,255);
     border-radius: 7px;
 }
@@ -82,8 +82,6 @@ input{
     position: relative;
 }
 .btn2{
-    border: 2px solid rgba(94,156,158,255);
-    border-radius: 7px;
     position: absolute;
     top: 12.5px;
 }
