@@ -82,3 +82,35 @@ footer {
     padding: 20px;
     text-align: center;
 }
+
+
+.soc_ico {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: url('../pics/icon-sprite.png');
+    background-size: cover;   
+}
+.soc_ico:hover {
+    opacity: 0.7;
+}
+.ico-inst {
+    background-position: -2px 0;    
+}
+.ico-facebook {
+    background-position: -46px 0; 
+
+}
+.ico-twitter {
+    background-position: -90px 0; 
+}
+.ico-yt{
+    background-position: -134px 0;
+}
+   
+.ico-git{
+    background-position: -176px 0;
+}
+.soc_link, .soc_ico{
+    display: inline-block;
+}
