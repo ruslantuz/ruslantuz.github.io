@@ -1,7 +1,7 @@
-@import url(_variables.css);
-@import url(_header.css);
-@import url(_main.css);
-@import url(_footer.css);
+@import url("_variables.css");
+@import url("_header.css");
+@import url("_main.css");
+@import url("_footer.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css");
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap');
 body{
