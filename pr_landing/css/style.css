@@ -41,9 +41,25 @@ ul li a{
         padding: 0 20px;
     }
     img{
-        height: fit-content;
+        width: calc(100vw - 40px);
+        height: min-content;
     }
     .bl-title{
         padding-top: 0;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .serv .d-flex, .blog .d-flex{
+        flex-direction: column;
+    }
+    .ico-block{
+        width: fit-content;
+        padding-bottom: 20px;
+    }
+    .d-flex{
+        flex-wrap: wrap;
+    }
+    .menu{
+        margin: auto;
     }
 }
