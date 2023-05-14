@@ -1,8 +1,0 @@
-.logo{
-    color: var(--logo-color);
-    font-size: 2em;
-    text-align: center;
-}
-.logo, .menu{
-    padding: 30px 0px;
-}
