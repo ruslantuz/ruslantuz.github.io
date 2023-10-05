@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@400;700&display=swap');
+table{
+    border-collapse: collapse;
+    border: 2px solid rgba(21,133,106,255);
+    font-family: 'Yantramanav', sans-serif;
+    letter-spacing: -0.2px;
+    float: left;
+    margin-right: 20px;
+}
+
+td{
+    font-size: 14px;
+    text-align: center;
+    height: 30px;
+    color: rgb(129, 128, 128);
+}
+
+th{
+    background-color: rgba(22,160,134,255);
+    width: 200px;
+    color: white;
+    height: 90px;
+    font-size: 30px;
+    border-bottom: 8px solid rgba(21,133,106,255);
+}
+
+.orange th, .orange .btn {
+    background-color: rgba(243,156,17,255);
+    border-color: rgba(211,124,10,255);
+}
+.orange, .orange tr:last-child{
+    border-color: rgba(211,124,10,255);
+    color: rgba(211,124,10,255);
+}
+.red th, .red .btn {
+    background-color: rgba(193,57,43,255);
+    border-color: rgba(161,44,30,255);
+}
+.red, .red tr:last-child{
+    border-color: rgba(161,44,30,255);
+    color: rgba(161,44,30,255);
+}
+
+
+.cost{
+    font-size: 30px;
+    color: white;
+    margin: 0;
+    font-weight: bold;
+}
+
+.plan{
+    color: white;
+    border: none;
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: normal;
+
+}
+tr:last-child{
+    height: 100px;
+    border-bottom: 8px solid rgba(21,133,106,255);
+    /* border-top:  2px dashed rgba(22,160,134,255); */
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    color: rgba(21,133,106,255);
+}
+
+tr:last-child::before{
+    content: "";
+    display: block;
+    width: 90%;
+    margin: 10px auto 0;
+    border-bottom: 1.5px dashed;
+    display: inline-block;
+}
+
+.btn{
+    background-color: rgba(22,160,134,255);
+    display: inline-block;
+    /* padding: 15px 20px ; */
+    color: white;
+    text-align: center;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    margin: 15% 50%;
+    /* margin-top: 20px; */
+}
+span{
+    font-weight: bold;
+}

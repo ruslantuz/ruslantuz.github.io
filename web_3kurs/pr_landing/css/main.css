@@ -1,0 +1,72 @@
+/* Page-bg */
+.page-bg{
+    background: url("../img/jumbotron.jpg") no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    padding: 100px 0 70px 0;
+}
+.head-title{
+    padding: 20px 0;
+    font-size: 2.5em;
+}
+.btn{
+    background-color: var(--btn-color);
+    width: 220px;
+    height: 60px;
+    border-radius: 30px;
+    margin: 50px auto;
+}
+
+/* Services */
+.serv{
+    padding-bottom: 80px;
+}
+.alt-title{
+    padding: 60px 0;
+    font-size: 2em;
+}
+.ico-block{
+    text-align: center;
+    width: 30%;
+    color: var(--text-color);
+    padding: 0 20px;
+}
+.ico-block i{
+    font-size: 3em;
+    display: block;
+    padding-bottom: 20px;
+}
+.ico-block span{
+    line-height: 1.5em;
+}
+
+/* Blog */
+.blog{
+    background-color: rgb(250, 250, 250);
+}
+.blog-item, .contact-item{
+    gap: 30px;
+    padding-bottom: 30px;
+}
+.bl-title{
+    font-size: 1.5em;
+    padding: 20px 0;
+}
+.blog-item span{
+    color: var(--text-color);
+    padding: 10px 0;
+    display: block;
+}
+/* Contact */
+.contact{
+    padding-bottom: 30px;
+}
+.contact-info{
+    color: var(--text-color);    
+}
+.contact-item i{
+    font-size: 30px;
+    min-width: 35px;
+    text-align: center;
+}

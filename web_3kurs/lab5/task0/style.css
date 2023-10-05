@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@700&display=swap');
+table{
+    font-family: 'Yantramanav', sans-serif;
+    letter-spacing: -0.5px;
+    font-weight: bold;
+}
+th{
+    height: 70px;
+    width: 230px;
+    font-size: 28px;
+    border-top: 4px solid rgba(0,219,116,255);
+    color: rgba(0,219,116,255);
+
+}
+tr{
+    border-left: 4px solid rgb(211, 210, 210);
+    border-right: 4px solid rgb(211, 210, 210);
+}
+tr:nth-child(2) td{
+    font-size: 28px;
+    height: 45px;
+    color: white;
+    background-color: rgba(0,219,116,255);
+    width: 100%;
+}
+table{
+    border-collapse: collapse;
+    border: none;
+}
+td{
+    border-left: 4px solid rgb(211, 210, 210);
+    border-right: 4px solid rgb(211, 210, 210);
+    font-size: 14px;
+    text-align: center;
+    height: 30px;
+    color: rgb(129, 128, 128);
+}
+tr:last-child{
+    height: 80px;
+    border-bottom: 4px solid rgba(0,219,116,255);
+
+}
+tr:nth-child(even){
+    background-color: rgb(171, 171, 171, 0.15);
+}
+span{
+    border-radius: 5px;
+    border: 3px solid rgba(0,219,116,255);
+    padding: 4px 15px 4px 15px;
+    color: rgba(0,219,116,255);
+}

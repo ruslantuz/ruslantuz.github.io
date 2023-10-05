@@ -1,0 +1,15 @@
+footer{
+    background-color: var(--footer-bg-color);
+    padding: 50px 0;
+    color: white;
+}
+.footer-text{
+    color: var(--footer-color);
+    padding: 5px 0;
+}
+.copyright{
+    text-align: center;
+}
+footer ul li a {
+    color: var(--footer-text-color);
+}
