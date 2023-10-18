@@ -1,3 +1,3 @@
-let today = new Date(),
-    newYeardate = new Date(today.getFullYear()+1, 0, 1);
+let date1 = new Date(2021, 1 , 20, 3, 12);
 
+document.write( date1.toLocaleString() + '</p>');
