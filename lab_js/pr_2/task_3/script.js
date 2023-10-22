@@ -1,9 +1,18 @@
-function getLastDayOfMonth(year, month) {
-    const nextMonth = new Date(year, month + 1, 1);
-    nextMonth.setDate(nextMonth.getDate() - 1);
-  
-    return nextMonth.getDate();
+function typeWriter(text, index) {
+    if (index < text.length) {
+        document.getElementById("output").textContent += text.charAt(index);
+        index++;
+        setTimeout(function() {
+        typeWriter(text, index);
+        }, 100); 
+    }
 }
   
-const lastDay = getLastDayOfMonth(2020, 1);
-document.write(`<p>Останній день місяця: ${lastDay}</p>`);
+function startTyping() {
+  const inputText = prompt("Введіть фразу для виводу:");
+  if (inputText) {
+    typeWriter(inputText, 0);
+  }
+}
+  
+document.getElementById("startButton").addEventListener("click", startTyping);

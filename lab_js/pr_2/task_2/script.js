@@ -1,7 +1,14 @@
-function getWeekDay(date){
-    let days = ['НД','ПН','ВТ','СР', 'ЧТ','ПТ','СБ'];
-    return days[date.getDay()];
+const options = {
+  hour: '2-digit',
+  minute: '2-digit',
+  second: '2-digit',
+};
+
+function displayCurrentTime() {
+    const currentTime = new Date();
+    document.getElementById("clock").textContent = currentTime.toLocaleTimeString('uk-UA', options);
 }
-let date = new Date(2012,0,3);
-document.write(`<p>Дата: ${date.toLocaleString()}</p>`);
-document.write(`<p>День тижня: ${getWeekDay(date)}</p>`)
+
+displayCurrentTime();
+
+document.getElementById("updateButton").addEventListener("click", displayCurrentTime);

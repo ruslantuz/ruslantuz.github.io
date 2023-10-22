@@ -1,11 +1,19 @@
-function getSecondsToTomorrow() {
-    const now = new Date(),
-        tomorrow = new Date(); 
+function betFunction() {
+    const userBet = parseInt(prompt("Введіть суму ставки:"));
+    if (!isNaN(userBet) && userBet !== null) {
+        const randomNum = Math.floor(Math.random() * 11) - 5;
 
-    tomorrow.setDate(now.getDate() + 1);
-    tomorrow.setHours(0, 0, 0, 0);
+        setTimeout(function() {
+        if (randomNum <= 0) {
+            alert(`Результат: ${randomNum}\nВи програли.`);
+        } else if (randomNum > 0) {
+            const winnings = userBet * randomNum;
+            alert(`Результат: ${randomNum}\nВи виграли ${winnings} гривень!`);
+        }
+        }, 1000);
+    } else {
+        alert("Будь ласка, введіть коректну суму ставки.");
+    }
+}
   
-    return  (tomorrow - now) / 1000;
-  }
-
-  document.write(`<p>Кількість секунд до завтра: ${getSecondsToTomorrow()}</p>`);
+document.getElementById("betBtn").addEventListener("click", betFunction);
