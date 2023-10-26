@@ -3,7 +3,6 @@ let taskCount = 0;
 let correctAnswer = 0;
 let hasAnswered = false;
 
-// Функція для генерування нового завдання та варіантів відповіді
 function generateTask() {
     taskCount++;
     const num1 = Math.floor(Math.random() * 10) + 1;
@@ -31,7 +30,6 @@ function generateTask() {
     document.getElementById("result").textContent = "";
 }
 
-// Функція для перевірки відповіді
 function checkAnswer() {
     if (!hasAnswered) {
         const selectedOption = document.querySelector('input[name="answer"]:checked');
