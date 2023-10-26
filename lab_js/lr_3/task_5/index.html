@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання 5</title>
+    <link rel="stylesheet" href="https://unpkg.com/reset-css/reset.css"> 
+  <style>
+    :root{
+        --size: 10px;
+    }
+    .pixel-row{
+        height: var(--size);
+    }
+    #captcha{
+        display: flex;
+        margin: 2px;
+        padding: 5px;
+        border: 1px solid black; 
+        width: fit-content;
+    }
+    .pixel-wrap{
+        margin-right: var(--size);
+    }
+    .pixel {
+      width: var(--size);
+      height: var(--size);
+      display: inline-block;
+      background-color: red;
+      margin: 0px;
+    }
+  </style>
+
+</head>
+<body>
+  <div id="captcha"></div>
+  <input type="text" id="captchaInput">
+  <button id="checkButton">Check</button>
+  <p id="message"></p>
+
+  <script src="script.js">
+
+  </script>
+</body>
+</html>
+
