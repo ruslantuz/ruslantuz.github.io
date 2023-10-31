@@ -1,0 +1,9 @@
+h1, .fa{
+    font-size: 24px;
+}
+.container{
+    background-color: blanchedalmond;
+    border: 1px solid rgb(249, 193, 108);
+    width: 400px;
+    padding: 20px;
+}
