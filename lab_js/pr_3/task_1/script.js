@@ -1,4 +1,3 @@
-
 const buttons = document.querySelectorAll('.container .fa')
 
 for (let i = 0; i<buttons.length; i++){
