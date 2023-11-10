@@ -5,24 +5,71 @@
     <title>Завдання 3</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body BGCOLOR = white> 
-    <p id="score">Загальний рахунок: 0</p>
-    <button id="nextTaskButton">Наступне завдання</button>
-    <p id="task"></p>
+<body BGCOLOR = white>    
+    
+    <div id="tabs">
+        <div class="tab whiteborder">border-radius</div>
+        <div class="tab">vertical-align</div>
+        <div class="tab">visibility</div>
+        <div class="tabContent">
+            <div>Верхній лівий радіус:
+                <div class="input-block">
+                    <input type="range" id="rtl" min="0" max="100" value="0" oninput="generate()">
+                    <input type="text" id="ttl" value="0" disabled>
+                </div>
+            </div>
+            <div>Верхній правий радіус:
+                <div class="input-block">
+                    <input type="range" id="rtr" min="0" max="100" value="0" oninput="generate()">
+                    <input type="text" id="ttr" value="0" disabled>
+                </div>
 
-    <form id="answerForm">
-        <input type="radio" name="answer" id="option1">
-        <label for="option1" id="label1"></label><br>
-        <input type="radio" name="answer" id="option2">
-        <label for="option2" id="label2"></label><br>
-        <input type="radio" name="answer" id="option3">
-        <label for="option3" id="label3"></label><br>
-        <input type="radio" name="answer" id="option4">
-        <label for="option4" id="label4"></label><br>
-    </form>
-    <button id="checkButton">Перевірити</button>
+            </div>
+            <div>Нижній правий радіус:
+                <div class="input-block">
+                    <input type="range" id="rbr" min="0" max="100" value="0" oninput="generate()">
+                    <input type="text" id="tbr" value="0" disabled>
+                </div>
 
-    <p id="result"></p>
+            </div>
+            <div>Нижній лівий радіус:
+                <div class="input-block">
+                    <input type="range" id="rbl" min="0" max="100" value="0" oninput="generate()">
+                    <input type="text" id="tbl" value="0" disabled>
+                </div>
+
+            </div>
+            <div id="block"></div>
+            <textarea name="code" id="codeText" cols="30" rows="10"></textarea>
+        </div>
+
+
+        <div class="tabContent">
+            <div>Вертикальне вирівнювання:
+                <div class="input-block">
+                    <input type="range" id="rVa" min="-50" max="50" value="0" oninput="generateVa()">
+                    <input type="text" id="tVa" value="0" disabled>
+                </div>
+            </div>
+            <div class="blockVa">
+                vertical-align: <img id="alignedPic" src="square.jpg" width="10" height="10">
+            </div>
+            <textarea name="code" id="codeTextVa" cols="30" rows="10"></textarea>
+        </div>
+
+        <div class="tabContent">
+            <div>Видимість:
+                <div class="input-block">
+                    <input type="checkbox" id="rVis" oninput="generateVis()" checked>
+                    <input type="text" id="tVis" value="true" disabled>
+                </div>
+            </div>
+
+            <div id="blockVis">
+            </div>
+            <textarea name="code" id="codeTextVis" cols="30" rows="10"></textarea>
+        </div>
+    </div>
     <script src="script.js">
 
     </script> 

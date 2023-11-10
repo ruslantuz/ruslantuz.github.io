@@ -1,58 +1,103 @@
-let score = 0;
-let taskCount = 0;
-let correctAnswer = 0;
-let hasAnswered = false;
+var tab;
+var tabContent;
 
-function generateTask() {
-    taskCount++;
-    const num1 = Math.floor(Math.random() * 10) + 1;
-    const num2 = Math.floor(Math.random() * 10) + 1;
-    correctAnswer = num1 * num2;
-    document.getElementById("task").textContent = `Завдання: ${num1} x ${num2}`;
-
-    const answerOptions = [];
-    answerOptions.push(correctAnswer);
-    while (answerOptions.length < 4) {
-        const option = Math.floor(Math.random() * 100);
-        if (!answerOptions.includes(option)) {
-            answerOptions.push(option);
-        }
-    }
-    answerOptions.sort(() => Math.random() - 0.5);
-
-    for (let i = 1; i <= 4; i++) {
-        document.getElementById(`label${i}`).textContent = answerOptions[i - 1];
-        document.getElementById(`option${i}`).value = answerOptions[i - 1];
-    }
-
-    hasAnswered = false;
-    document.getElementById("answerForm").reset(); 
-    document.getElementById("result").textContent = "";
+window.onload=function(){
+    tabContent = document.getElementsByClassName('tabContent');
+    tab = document.getElementsByClassName('tab');
+    hideTabsContent(1);
+    generate();
+    generateVa();
+    generateVis();
 }
 
-function checkAnswer() {
-    if (!hasAnswered) {
-        const selectedOption = document.querySelector('input[name="answer"]:checked');
-        if (selectedOption) {
-            const userAnswer = parseInt(selectedOption.value);
-            if (userAnswer === correctAnswer) {
-                score++;
-                document.getElementById("result").textContent = "Вірно.";
-            } else {
-              document.getElementById("result").textContent = `Помилка, правильна відповідь "${correctAnswer}".`;
+function hideTabsContent(a){
+    for(var i = a; i<tabContent.length; i++){
+        tabContent[i].classList.remove('show');
+        tabContent[i].classList.add('hide');
+        tab[i].classList.remove('whiteborder');
+    }
+}
+
+document.getElementById('tabs').onclick= function(event){
+    var target = event.target;
+    if (target.className == 'tab'){
+        for(var i = 0; i< tab.length; i++){
+            if(target == tab[i]){
+                showTabsContent(i);
+                break;
             }
-            document.getElementById("score").textContent = 
-              `Загальний рахунок: ${(score/taskCount*100).toFixed(2)}% (${score} правильних відповідей з ${taskCount})`;
-            hasAnswered = true; 
         }
-    }
-    else{
-      document.getElementById("result").textContent = "Ви вже відповіли.";
     }
 }
 
-document.getElementById("checkButton").addEventListener("click", checkAnswer);
+function showTabsContent(b){
+    if(tabContent[b].classList.contains('hide')){
+        hideTabsContent(0);
+        tab[b].classList.add('whiteborder');
+        tabContent[b].classList.remove('hide');
+        tabContent[b].classList.add('show');
+    }
+}
 
-document.getElementById("nextTaskButton").addEventListener("click", generateTask);
+function generate(){
+    var rtl = document.getElementById('rtl').value;
+    var rtr = document.getElementById('rtr').value;
+    var rbr = document.getElementById('rbr').value;
+    var rbl = document.getElementById('rbl').value;
 
-generateTask();
+    var ttl = document.getElementById('ttl');
+    var ttr = document.getElementById('ttr');
+    var tbr = document.getElementById('tbr');
+    var tbl = document.getElementById('tbl');
+
+    var block = document.getElementById('block');
+
+    var codeText = document.getElementById('codeText');
+
+    ttl.value = rtl;
+    ttr.value = rtr;
+    tbr.value = rbr;
+    tbl.value = rbl;
+    
+
+    cssCode = rtl + "px " + rtr + "px " + rbr + "px " + rbl + "px";
+
+    codeText.textContent = "border-radius: "+  cssCode + ";";
+    block.style.borderRadius = cssCode;
+    
+}
+
+function generateVa(){
+    var rVa = document.getElementById('rVa').value;
+
+    var tVa = document.getElementById('tVa');
+
+    var alignedPic = document.getElementById('alignedPic');
+
+    var codeTextVa = document.getElementById('codeTextVa');
+
+    tVa.value = rVa;
+
+    cssCode = rVa + "px";
+
+    codeTextVa.textContent = "vertical-align: "+  cssCode + ";";
+    alignedPic.style.verticalAlign = cssCode;   
+}
+
+function generateVis(){
+    var rVis = document.getElementById('rVis');
+
+    var tVis = document.getElementById('tVis');
+
+    var blockVis = document.getElementById('blockVis');
+
+    var codeTextVis = document.getElementById('codeTextVis');
+
+    tVis.value = rVis.checked;
+
+    console.log(rVis)
+    cssCode = rVis.checked ? "visible" : "hidden";
+
+    codeTextVis.textContent = "visibility: "+  cssCode + ";";
+    blockVis.style.visibility = cssCode;   
+}
