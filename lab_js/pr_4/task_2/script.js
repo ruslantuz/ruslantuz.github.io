@@ -41,9 +41,8 @@ function displayLocation(position){
 
         updateMap(latitude, longitude);
 
-        let km = computeDistance(position.coords, ourCoords);
-        let distance = document.getElementById("distance");
-        distance.innerHTML = `You are ${km.toFixed(2)} km from the College`;
+        displayDistance(position.coords, ourCoords);
+
 
         addMarkerWithInfo(latitude, longitude, new Date(position.timestamp));
 
@@ -99,6 +98,8 @@ function setDestination() {
         longitude: destinationLng
     };
 
+    displayDistance(previousCoords, ourCoords);
+    
     updateMap(destinationLat, destinationLng);
 
     addMarkerWithInfo(destinationLat, destinationLng, new Date());
@@ -109,6 +110,12 @@ function scrollToDestination() {
     const destinationLng = parseFloat(document.getElementById('destinationLng').value);
 
     map.setView([destinationLat, destinationLng], 15);
+}
+
+function displayDistance(startCoords, destCoords) {
+    let km = computeDistance(startCoords, destCoords);
+    let distance = document.getElementById("distance");
+    distance.innerHTML = `You are ${km.toFixed(2)} km from the College`;
 }
 
 function computeDistance(startCoords, destCoords){
