@@ -70,7 +70,6 @@ function displayError(error){
 }
 
 
-
 function updateMap(latitude, longitude) {
     if (!map) {
         map = L.map('map').setView([latitude, longitude], 15);
