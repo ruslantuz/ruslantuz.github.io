@@ -102,7 +102,6 @@ function setDestination() {
 
     updateMap(destinationLat, destinationLng);
 
-    clearMarkers();
     addMarkerWithInfo(destinationLat, destinationLng, new Date());
 }
 
@@ -112,14 +111,6 @@ function scrollToDestination() {
 
     map.setView([destinationLat, destinationLng], 15);
 }
-
-function clearMarkers() {
-    markers.forEach(marker => marker.remove());
-    markers = [];
-}
-
-
-
 
 function computeDistance(startCoords, destCoords){
     let startLatRads = degreesToRadians(startCoords.latitude);
