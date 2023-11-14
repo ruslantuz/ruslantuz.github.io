@@ -82,9 +82,9 @@ function updateMap(latitude, longitude) {
 
 
 function addMarkerWithInfo(latitude, longitude, timestamp) {
-    const popupContent = `Latitude: ${latitude}<br>Longitude: ${longitude}<br>Time: ${timestamp.toLocaleString("uk-UK")}`;
+    const popupContent = `Latitude: ${latitude}<br>Longitude: ${longitude}<br>Time: ${timestamp.toLocaleString("uk-UK", { timeZone: 'UTC' })}`;
     const marker = L.marker([latitude, longitude]).bindPopup(popupContent);
-
+    map.setView([latitude, longitude]);
     marker.addTo(map);
     markers.push(marker);
 }
@@ -99,7 +99,7 @@ function setDestination() {
     };
 
     displayDistance(previousCoords, ourCoords);
-    
+
     updateMap(destinationLat, destinationLng);
 
     addMarkerWithInfo(destinationLat, destinationLng, new Date());
