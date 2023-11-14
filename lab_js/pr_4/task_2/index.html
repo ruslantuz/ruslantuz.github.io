@@ -2,29 +2,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Завдання 2</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Wherever you go, there you are</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
 </head>
-<body BGCOLOR = white>    
-    <div>Верхній лівий радіус:
-        <input type="range" id="rtl" min="0" max="100" value="0" oninput="generate()">
-        <input type="text" id="ttl" value="0">
+<body>    
+    <form>
+        <input type="button" id="watch" value="Watch me">
+        <input type="button" id="clearWatch" value="Clear watch">
+    </form>
+    
+    <div id="location">
+        Your location will go here.
     </div>
-    <div>Верхній правий радіус:
-        <input type="range" id="rtr" min="0" max="100" value="0" oninput="generate()">
-        <input type="text" id="ttr" value="0">
+    <div id="distance">
+        Distance from Destination will go here. (default - College)
     </div>
-    <div>Нижній правий радіус:
-        <input type="range" id="rbr" min="0" max="100" value="0" oninput="generate()">
-        <input type="text" id="tbr" value="0">
-    </div>
-    <div>Нижній лівий радіус:
-        <input type="range" id="rbl" min="0" max="100" value="0" oninput="generate()">
-        <input type="text" id="tbl" value="0">
-    </div>
-    <div id="block"></div>
-    <script src="script.js">
+    
+    <label for="destinationLat">Destination Latitude:</label>
+    <input type="text" id="destinationLat" placeholder="Latitude">
+    <label for="destinationLng">Destination Longitude:</label>
+    <input type="text" id="destinationLng" placeholder="Longitude">
+    <button type="button" id="setDestination">Set Destination</button>
+    <button type="button" id="scrollToDestination">Scroll to Destination</button>
 
-    </script> 
+    <div id="map" style = 'height: 480px'></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+
+    <script src="script.js"></script> 
 </body>
 </html>
