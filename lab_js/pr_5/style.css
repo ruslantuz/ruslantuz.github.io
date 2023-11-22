@@ -1,37 +1,40 @@
 body{
     font-family: Arial, sans-serif;
-  }
-  .wrapper{
+}
+.wrapper{
     width: 50%;
     margin: auto;
-  }
-  .head-wrap, .wrapper{
+}
+.head-wrap, .wrapper{
     border: 1px solid black;
     padding: 20px;
-  }
-  .head-wrap{
-    display: flex;
+}
+.head-wrap{
+    display: flex;  
     align-items: center;
     flex-direction: column;
-  }
-  #taskList {
+}
+#taskList {
     list-style-type: none;
     padding: 0;
-  }
+}
 
-  .task {
+.task {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 8px;
     border-bottom: 1px solid #ccc;
-  }
+}
 
-  .task input[type="checkbox"] {
+.task input[type="checkbox"] {
     margin-right: 8px;
-  }
+}
 
-  .completed {
+.completed {
     text-decoration: line-through;
     color: grey;
-  }
+}
+.checkbox-hidden{
+    visibility: hidden;
+}

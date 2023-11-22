@@ -17,20 +17,28 @@ document.addEventListener("DOMContentLoaded", function () {
       li.innerHTML = `
         <input type="checkbox">
         <span class="task-text">${task.text}</span>
+        
+        <button class="delete-btn">X</button>
       `;
       taskList.appendChild(li);
 
       const checkbox = li.querySelector("input[type='checkbox']");
       const taskText = li.querySelector(".task-text");
+      const deleteBtn = li.querySelector(".delete-btn");
 
       checkbox.checked = task.completed;
+      if (checkbox.checked){
+        checkbox.classList.toggle("checkbox-hidden");
+      }
       li.classList.toggle("completed", task.completed);
 
       checkbox.addEventListener("change", function () {
         task.completed = checkbox.checked;
         li.classList.toggle("completed", checkbox.checked);
+        checkbox.classList.toggle("checkbox-hidden");
         updateLocalStorage(getTasks());
       });
+      
 
       taskText.addEventListener("dblclick", function () {
         const input = document.createElement("input");
@@ -48,7 +56,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 updateLocalStorage(getTasks());
             }
         });
-    });
+        });
+
+        deleteBtn.addEventListener("click", function () {
+            taskList.removeChild(li);
+            updateLocalStorage(getTasks());
+          });
     }
 
     function getTasks() {
