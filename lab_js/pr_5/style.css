@@ -14,6 +14,9 @@ body{
     align-items: center;
     flex-direction: column;
 }
+.head-wrap > *{
+    margin: 5px 0;
+}
 #taskList {
     list-style-type: none;
     padding: 0;
@@ -38,3 +41,6 @@ body{
 .checkbox-hidden{
     visibility: hidden;
 }
+/* .task-date{
+    margin: 0 20px
+} */

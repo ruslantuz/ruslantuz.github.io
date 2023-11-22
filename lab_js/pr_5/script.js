@@ -1,6 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
     const taskList = document.getElementById("taskList");
     const newTaskInput = document.getElementById("newTask");
+    const sortButton = document.getElementById("sortButton");
+    sortButton.addEventListener("click", sortTasks);
+    
+    function sortTasks() {
+        const tasks = getTasks();
+        tasks.sort((b, a) => {
+            if (a.completed && !b.completed) {
+                return -1;
+            } else if (!a.completed && b.completed) {
+                return 1;
+            }
+            return 0;
+        });
+
+        taskList.innerHTML = "";
+        tasks.forEach(addTask);
+        updateLocalStorage(tasks);
+    }
 
     function updateLocalStorage(tasks) {
       localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -14,11 +32,18 @@ document.addEventListener("DOMContentLoaded", function () {
     function addTask(task) {
       const li = document.createElement("li");
       li.className = "task";
+      if (task.taskDate === undefined){
+        const now = new Date();
+        const date = `${now.getDate()}.${now.getMonth() + 1}.${now.getFullYear()}, ${now.getHours()}:${now.getMinutes()}`;
+        task.taskDate = date;
+      }
       li.innerHTML = `
-        <input type="checkbox">
-        <span class="task-text">${task.text}</span>
-        
-        <button class="delete-btn">X</button>
+            <input type="checkbox">
+            <span class="task-text">${task.text}</span>
+            <div>
+            <span class="task-date">${task.taskDate}</span>
+            <button class="delete-btn">X</button>
+            </div>
       `;
       taskList.appendChild(li);
 
@@ -54,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 li.replaceChild(taskText, input);
                 taskText.textContent = newText;
                 updateLocalStorage(getTasks());
+                location.reload()
             }
         });
         });
@@ -70,8 +96,9 @@ document.addEventListener("DOMContentLoaded", function () {
       taskElements.forEach(function (taskElement) {
         const checkbox = taskElement.querySelector("input[type='checkbox']");
         const text = taskElement.querySelector(".task-text").textContent;
+        const date = taskElement.querySelector(".task-date").textContent;
         const completed = taskElement.classList.contains("completed");
-        tasks.push({ text, completed });
+        tasks.push({ text,taskDate: date, completed });
       });
       return tasks;
     }
