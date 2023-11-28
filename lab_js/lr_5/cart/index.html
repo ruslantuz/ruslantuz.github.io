@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина товарів</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Корзина товарів</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Назва товару</th>
+                <th>Ціна</th>
+                <th>Кількість</th>
+                <th>Сума</th>
+                <th>Дії</th>
+            </tr>
+        </thead>
+        <tbody id="cartTableBody"></tbody>
+    </table>
+    <a href="#" class="checkout-btn" onclick="checkout()">Оплатити</a>
+    <a href="index.html" class="checkout-btn">Повернутись до покупок</a>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            displayCartItems();
+        });
+
+        function displayCartItems() {
+            var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+            var cartTableBody = document.getElementById("cartTableBody");
+
+            cartTableBody.innerHTML = "";
+
+            cartItems.forEach(function (item, index) {
+                var row = document.createElement("tr");
+                var productName = item.name;
+                var total = item.quantity * item.price;
+
+                row.innerHTML = "<td>" + (index + 1) + "</td><td><a href='" + item.link + "'>" + productName + "</a></td><td>" + item.price + " грн</td><td>" + item.quantity + "</td><td>" + total + " грн</td><td><button class='delete-btn' onclick='deleteItem(" + index + ")'>Видалити</button></td>";
+                cartTableBody.appendChild(row);
+            });
+        }
+
+        function checkout() {
+            alert("Оплата успішно виконана!");
+
+            localStorage.removeItem("cartItems");
+            displayCartItems(); 
+        }
+
+        function deleteItem(index) {
+            var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+            cartItems.splice(index, 1);
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+            displayCartItems();
+        }
+    </script>
+</body>
+</html>
