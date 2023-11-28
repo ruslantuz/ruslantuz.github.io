@@ -16,9 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll(".avl").forEach(function (button) {
         button.addEventListener("click", function () {
-            var productName = button.parentElement.previousElementSibling.previousElementSibling.firstElementChild.innerText;
-            var productLink = button.parentElement.previousElementSibling.previousElementSibling.firstElementChild.href;
-            var productPrice = getPrice(button.parentElement.previousElementSibling.lastElementChild);
+            var productName = button.parentElement.parentElement.querySelector('.prod a').innerText;
+            var productLink = button.parentElement.parentElement.querySelector('.prod a').href;
+            var productPrice = getPrice(button.parentElement.parentElement.querySelector('.price'));
 
             var quantity = prompt("Вкажіть кількість:");
             if (quantity !== null && quantity !== "") {
