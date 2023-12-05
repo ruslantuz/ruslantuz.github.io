@@ -51,13 +51,7 @@ function showHeroes(superHeroes){
                 powerList.appendChild(powerInfo)
             })
 
-
-            article.appendChild(memberName);
-            article.appendChild(secretIdentity);
-            article.appendChild(age);
-            article.appendChild(superPowersHead);
-            article.appendChild(powerList);
-
+            article.append(memberName, secretIdentity, age, superPowersHead, powerList);
             section.appendChild(article);
         }); 
 
