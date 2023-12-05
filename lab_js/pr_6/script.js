@@ -13,14 +13,13 @@ request.onload = function(){
     const superHeroes = request.response;
     populateHeader(superHeroes);
     showHeroes(superHeroes);
-    console.log(superHeroes)
 }
 
 function populateHeader(superHeroes){
     const squadName = document.createElement('h1');
     const squadinfo = document.createElement('p');
 
-    squadName.textContent = superHeroes.squadName
+    squadName.textContent = superHeroes.squadName;
     squadinfo.textContent = "Hometown: " + superHeroes.homeTown + " // Formed: " + superHeroes.formed;
     
     header.appendChild(squadName);
@@ -31,7 +30,7 @@ function showHeroes(superHeroes){
         (member) => {
             const article = document.createElement('article');
 
-            const memberName = document.createElement('h2')
+            const memberName = document.createElement('h2');
             memberName.textContent = member.name;
             
             const secretIdentity = document.createElement('p');
@@ -40,21 +39,18 @@ function showHeroes(superHeroes){
             const age = document.createElement('p');
             age.textContent = "Age: " + member.age;
             
-            const superPowersHead = document.createElement('p')
+            const superPowersHead = document.createElement('p');
             superPowersHead.textContent = "Superpowers:";
             
-            const powerList = document.createElement('ul')
+            const powerList = document.createElement('ul');
 
             member.powers.forEach((power) => {
                 const powerInfo = document.createElement('li');
-                powerInfo.textContent = power
-                powerList.appendChild(powerInfo)
+                powerInfo.textContent = power;
+                powerList.appendChild(powerInfo);
             })
 
             article.append(memberName, secretIdentity, age, superPowersHead, powerList);
             section.appendChild(article);
         }); 
-
-
-
 }
