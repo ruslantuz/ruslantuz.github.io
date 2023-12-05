@@ -36,16 +36,6 @@
         "Teleportation",
         "Interdimensional travel"
       ]
-    },    
-    {
-      "name" : "Black",
-      "age" : 228,
-      "secretIdentity" : "N",
-      "powers" : [
-        "Glock",
-        "AK-47",
-        "Knife"
-      ]
     }
   ]
 }
