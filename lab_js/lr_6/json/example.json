@@ -1,41 +1,40 @@
 {
-  "squadName" : "Super Hero Squad",
-  "homeTown" : "Metro City",
-  "formed" : 2022,
-  "secretBase" : "Super tower",
-  "active" : true,
-  "members" : [
+  "products" : [
     {
-      "name" : "Molecule Man",
-      "age" : 29,
-      "secretIdentity" : "Dan Jukes",
-      "powers" : [
-        "Radiation resistance",
-        "Turning tiny",
-        "Radiation blast"
-      ]
+      "note" : "new",
+      "category" : "Поло",
+      "image" : "pics/polo.jpg",
+      "name": "Біле поло",
+      "oldPrice" : null,
+      "price" : null,
+      "available" : false
     },
     {
-      "name" : "Madame Uppercut",
-      "age" : 39,
-      "secretIdentity" : "Jane Wilson",
-      "powers" : [
-        "Million tonne punch",
-        "Damage resistance",
-        "Superhuman reflexes"
-      ]
+      "note" : null,
+      "category" : "Сорочки",
+      "image" : "pics/shirt.jpg",
+      "name": "Біло-синя сорочка",
+      "oldPrice" : 550,
+      "price" : 500,
+      "available" : true
     },
     {
-      "name" : "Eternal Flame",
-      "age" : 1000000,
-      "secretIdentity" : "Unknown",
-      "powers" : [
-        "Immortality",
-        "Heat Immunity",
-        "Inferno",
-        "Teleportation",
-        "Interdimensional travel"
-      ]
+      "note" : "hit",
+      "category" : "Светри",
+      "image" : "pics/sweater.jpg",
+      "name": "Синій светр",
+      "oldPrice" : 920,
+      "price" : 800,
+      "available" : true
+    },
+    {
+      "note" : "hit",
+      "category" : "пальто",
+      "image" : "pics/coat.jpg",
+      "name": "Вовняне пальто Sartorio Napoli Green Virgin",
+      "oldPrice" : null,
+      "price" : 1200,
+      "available" : true
     }
   ]
 }

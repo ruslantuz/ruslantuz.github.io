@@ -1,25 +1,20 @@
-const header = document.querySelector('header')
+const wrap = document.querySelector('wrap')
 const section = document.querySelector('section')
 
-// const requestURL = 'https://ruslantuz.github.io/lab_js/lr_6/json/example.json';
 const requestURL = 'https://ruslantuz.github.io/lab_js/lr_6/json/example.json';
-
-
-
-
 const request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'json';
 
 request.send();
 
-request.onload = function(){
-    const superHeroes = request.response;
-    showHeroes(superHeroes);
+request.onreadystatechange = (e) => {
+    const goodsList = request.response;
+    generateGoods(goodsList);
 }
 
-function showHeroes(superHeroes){
-    superHeroes.members.forEach(
+function generateGoods(goodsList){
+    goodsList.members.forEach(
         (member) => {
             const article = document.createElement('article');
 
