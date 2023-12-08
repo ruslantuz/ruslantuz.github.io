@@ -5,6 +5,7 @@
       "category" : "Поло",
       "image" : "pics/polo.jpg",
       "name": "Біле поло",
+      "link" : "https://isuit.it/en/k02-kiton-white-cotton-polo-uk1172e-1-23v390004.html",
       "oldPrice" : null,
       "price" : null,
       "available" : false
@@ -14,6 +15,7 @@
       "category" : "Сорочки",
       "image" : "pics/shirt.jpg",
       "name": "Біло-синя сорочка",
+      "link" : "https://isuit.it/en/k02-kiton-blue-white-cotton-shirt-ucch08-29050000.html",
       "oldPrice" : 550,
       "price" : 500,
       "available" : true
@@ -23,6 +25,7 @@
       "category" : "Светри",
       "image" : "pics/sweater.jpg",
       "name": "Синій светр",
+      "link" : "https://isuit.it/en/k01-kired-blue-pa-ea-coat-wrouxw-7717507001.html",
       "oldPrice" : 920,
       "price" : 800,
       "available" : true
@@ -32,6 +35,7 @@
       "category" : "пальто",
       "image" : "pics/coat.jpg",
       "name": "Вовняне пальто Sartorio Napoli Green Virgin",
+      "link" : "https://isuit.it/en/s05-sartorio-napoli-green-virgin-wool-coat-sfurats-1-0680003001.html",
       "oldPrice" : null,
       "price" : 1200,
       "available" : true

@@ -9,13 +9,13 @@ request.responseType = 'json';
 request.send();
 
 request.onreadystatechange = (e) => {
-    const goodsList = request.response;
-    generateGoods(goodsList);
+    const productList = request.response;
+    generateProducts(productList);
 }
 
-function generateGoods(goodsList){
-    goodsList.members.forEach(
-        (member) => {
+function generateProducts(productList){
+    productList.products.forEach(
+        (product) => {
             const article = document.createElement('article');
 
             const memberName = document.createElement('h2');
