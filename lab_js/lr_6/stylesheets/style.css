@@ -4,9 +4,8 @@ body{
     text-align: center;
     font-family: 'Roboto', sans-serif;
 }
-.wrap,.panel, hr{
+.wrap, .panel, hr{
     border: 1px solid rgba(228,228,228,255);
-
 }
 
 .wrap{
@@ -23,7 +22,7 @@ body{
 }
 .panel{
     width: 25%;
-    height: 100%;
+    height: 500px !important;
     box-sizing: border-box;
     position: relative;
     align-items: stretch;

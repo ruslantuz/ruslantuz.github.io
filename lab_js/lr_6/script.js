@@ -1,6 +1,8 @@
 const products = document.querySelector('#products')
+const productsAxios = document.querySelector('#productsAxios')
 
 const requestURL = 'https://ruslantuz.github.io/lab_js/lr_6/json/example.json';
+
 const request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'json';
@@ -9,10 +11,16 @@ request.send();
 
 request.onload = (e) => {
     const productList = request.response;
-    generateProducts(productList);
+    generateProducts(productList, products);
+    cartFunc();
 }
 
-function generateProducts(productList){
+axios.get(requestURL).then(response=>{
+    const productList = response.data;
+    generateProducts(productList, productsAxios);
+})
+
+function generateProducts(productList, wrapper){
     productList.products.forEach(
         (product) => {
             const panel = document.createElement('div');
@@ -84,6 +92,7 @@ function generateProducts(productList){
             if(product.available === true){
                 buyBtn.classList.add('avl');
                 buyBtn.textContent = 'У корзину';
+                buyBtn.href = '#';
             }
             else{
                 buyBtn.classList.add('soon');
@@ -91,14 +100,14 @@ function generateProducts(productList){
             }
             buyBlock.append(buyBtn);
             panel.append(buyBlock);
-            products.append(panel);
+            wrapper.append(panel);
         }
     ); 
 }
 
 
 // CART
-document.addEventListener("DOMContentLoaded", function () {
+ function cartFunc() {
     var shoppingCartIcon = document.getElementById("shoppingCart");
     var cartItemCount = document.getElementById("cartItemCount");
 
@@ -160,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var priceString = element.innerText.trim().replace("грн", "");
         return parseFloat(priceString);
     }
-});
+};
 
 
 var swiper = new Swiper(".mySwiper", {
@@ -168,7 +177,16 @@ var swiper = new Swiper(".mySwiper", {
     spaceBetween: 0,
     grabCursor: false,
     navigation: {
-      nextEl: ".rightsw",
-      prevEl: ".leftsw",
+      nextEl: "#wrap1 .rightsw",
+      prevEl: "#wrap1 .leftsw",
+    },  
+});
+var swiper2 = new Swiper(".mySwiper2", {
+    slidesPerView: 4,
+    spaceBetween: 0,
+    grabCursor: false,
+    navigation: {
+      nextEl: "#wrap2 .rightsw",
+      prevEl: "#wrap2 .leftsw",
     },  
 });
