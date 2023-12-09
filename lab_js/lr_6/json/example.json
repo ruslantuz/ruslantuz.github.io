@@ -41,13 +41,23 @@
       "available" : true
     },
     {
-      "note" : "hit",
-      "category" : "пальто",
-      "image" : "pics/coat.jpg",
-      "name": "Вовняне пальто Sartorio Napoli Green Virgin",
-      "link" : "https://isuit.it/en/s05-sartorio-napoli-green-virgin-wool-coat-sfurats-1-0680003001.html",
-      "oldPrice" : null,
-      "price" : 1200,
+      "note" : null,
+      "category" : "Кросівки",
+      "image" : "pics/sneakers.jpg",
+      "name": "Чорні кросівки",
+      "link" : "https://isuit.it/en/i01-isaia-black-cotton-sneakers-amalfi-snkmg3-knt01990.html",
+      "oldPrice" : 850,
+      "price" : 425,
+      "available" : true
+    },
+    {
+      "note" : "new",
+      "category" : "Рукавиці",
+      "image" : "pics/gloves.jpg",
+      "name": "Коричневі шкіряні рукавиці",
+      "link" : "https://isuit.it/en/k02-kiton-brown-leather-suede-gloves-gloves-12-00001.html",
+      "oldPrice" : 500,
+      "price" : 250,
       "available" : true
     }
   ]

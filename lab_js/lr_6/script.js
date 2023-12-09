@@ -47,6 +47,7 @@ function generateProducts(productList){
             const pictureImg = document.createElement('img');
             pictureImg.src = product.image;
             pictureImg.alt = 'img';
+            
             pictureLink.append(pictureImg);
             pictureBlock.append(pictureLink);
             panel.append(pictureBlock);
@@ -56,6 +57,7 @@ function generateProducts(productList){
             const productLink = document.createElement('a');
             productLink.href = product.link;
             productLink.textContent = product.name;
+            productLink.title = product.name;
             productName.append(productLink);
             panel.append(productName);
 
@@ -66,7 +68,7 @@ function generateProducts(productList){
             if (product.oldPrice !== null){
                 oldPrice.textContent = product.oldPrice + ' грн' 
             }
-            priceBlock.append(oldPrice);
+            priceBlock.append(oldPrice, "\u00A0");
 
             const price = document.createElement('span');
             price.classList.add('price');
@@ -96,8 +98,6 @@ function generateProducts(productList){
 
 
 // CART
-
-
 document.addEventListener("DOMContentLoaded", function () {
     var shoppingCartIcon = document.getElementById("shoppingCart");
     var cartItemCount = document.getElementById("cartItemCount");
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 4,
     spaceBetween: 0,
-    grabCursor: true,
+    grabCursor: false,
     navigation: {
       nextEl: ".rightsw",
       prevEl: ".leftsw",
