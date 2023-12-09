@@ -12,12 +12,13 @@ request.send();
 request.onload = (e) => {
     const productList = request.response;
     generateProducts(productList, products);
-    cartFunc();
+    cartFunc(products);
 }
 
 axios.get(requestURL).then(response=>{
     const productList = response.data;
     generateProducts(productList, productsAxios);
+    cartFunc(productsAxios);
 })
 
 function generateProducts(productList, wrapper){
@@ -107,7 +108,7 @@ function generateProducts(productList, wrapper){
 
 
 // CART
- function cartFunc() {
+ function cartFunc(wrapper) {
     var shoppingCartIcon = document.getElementById("shoppingCart");
     var cartItemCount = document.getElementById("cartItemCount");
 
@@ -123,7 +124,7 @@ function generateProducts(productList, wrapper){
         }
     });
 
-    document.querySelectorAll(".avl").forEach(function (button) {
+    wrapper.querySelectorAll(".avl").forEach(function (button) {
         button.addEventListener("click", function () {
             var productName = button.parentElement.parentElement.querySelector('.prod a').innerText;
             var productLink = button.parentElement.parentElement.querySelector('.prod a').href;
