@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Додайте товар</title>
+    <style>
+        label{
+            display: inline-block;
+            min-width: 200px;
+            text-align: right;
+        }
+        div{
+            margin-bottom: 5px;
+        }
+        input[type="submit"]{
+            padding: 10px 20px;
+            margin-left: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Форма для додавання товару</h2>
+    <form action="http://localhost:3002/products/" method="post">
+        <div>
+            <label for="note">Примітка:</label>
+            <select id="note" name="note">
+                <option></option>
+                <option value="hit">Хіт продаж</option>
+                <option value="new">Новинка</option>
+            </select><br>
+        </div>
+        <div>
+            <label for="category">Категорія:</label>
+            <input type="text" id="category" name="category" required>
+        </div>
+        <div>
+            <label for="image">Посилання на зображення:</label>
+            <input type="text" id="image" name="image" required>
+        </div>
+        <div>
+            <label for="name">Назва товару:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="link">Посилання на товар:</label>
+            <input type="text" id="link" name="link" required>
+        </div>
+        <div>
+            <label for="oldprice">Стара ціна:</label>
+            <input type="text" id="oldprice" name="oldprice">
+        </div>
+        <div>
+            <label for="price">Ціна:</label>
+            <input type="text" id="price" name="price">
+        </div>
+        <div>
+            <label for="available">Наявність:</label>
+            <select id="available" name="available" required>
+                <option value='1'>Так</option>
+                <option value='0'>Ні</option>
+            </select><br>
+        </div>
+        <input type="submit" value="Додати товар">
+    </form>
+    <a href="../index.html">Повернутись назад</a>
+</body>
+
+</html>

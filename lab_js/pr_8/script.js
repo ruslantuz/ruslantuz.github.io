@@ -1,22 +1,16 @@
-const products = document.querySelector('#products')
+const productsAxios = document.querySelector('#products')
 
 const requestURL = 'http://localhost:3002/products/';
 
-const request = new XMLHttpRequest();
-request.open('GET', requestURL);
-request.responseType = 'json';
-
-request.send();
-
-request.onload = (e) => {
-    const productList = request.response;
-    generateProducts(productList, products);
-    cartFunc(products);
-}
-
+axios.get(requestURL).then(response => {
+    const productList = response.data;
+    console.log(productList)
+    generateProducts(productList, productsAxios);
+    cartFunc(productsAxios);
+})
 
 function generateProducts(productList, wrapper) {
-    productList.products.forEach(
+    productList.forEach(
         (product) => {
             const panel = document.createElement('div');
             panel.classList.add('panel', 'swiper-slide');
@@ -66,12 +60,13 @@ function generateProducts(productList, wrapper) {
 
             const priceBlock = document.createElement('div');
             priceBlock.classList.add('costs', 'bold');
-            const oldPrice = document.createElement('span');
-            oldPrice.classList.add('old-price')
-            if (product.oldPrice !== null) {
-                oldPrice.textContent = product.oldPrice + ' грн'
+            const oldprice = document.createElement('span');
+            oldprice.classList.add('old-price')
+            console.log(product.oldprice)
+            if (product.oldprice !== null) {
+                oldprice.textContent = product.oldprice + ' грн'
             }
-            priceBlock.append(oldPrice, "\u00A0");
+            priceBlock.append(oldprice, "\u00A0");
 
             const price = document.createElement('span');
             price.classList.add('price');
@@ -84,7 +79,7 @@ function generateProducts(productList, wrapper) {
             const buyBlock = document.createElement('div');
             const buyBtn = document.createElement('a');
             buyBtn.classList.add('btn', 'bold');
-            if (product.available === true) {
+            if (product.available === 1) {
                 buyBtn.classList.add('avl');
                 buyBtn.textContent = 'У корзину';
                 buyBtn.href = '#';
@@ -174,14 +169,5 @@ var swiper = new Swiper(".mySwiper", {
     navigation: {
         nextEl: "#wrap1 .rightsw",
         prevEl: "#wrap1 .leftsw",
-    },
-});
-var swiper2 = new Swiper(".mySwiper2", {
-    slidesPerView: 4,
-    spaceBetween: 0,
-    grabCursor: false,
-    navigation: {
-        nextEl: "#wrap2 .rightsw",
-        prevEl: "#wrap2 .leftsw",
     },
 });
