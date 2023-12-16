@@ -4,7 +4,6 @@ const requestURL = 'http://localhost:3002/products/';
 
 axios.get(requestURL).then(response => {
     const productList = response.data;
-    console.log(productList)
     generateProducts(productList, productsAxios);
     cartFunc(productsAxios);
 })
@@ -62,7 +61,6 @@ function generateProducts(productList, wrapper) {
             priceBlock.classList.add('costs', 'bold');
             const oldprice = document.createElement('span');
             oldprice.classList.add('old-price')
-            console.log(product.oldprice)
             if (product.oldprice !== null) {
                 oldprice.textContent = product.oldprice + ' грн'
             }
