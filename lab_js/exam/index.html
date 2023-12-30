@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Туз (19)</title>
+</head>
+<body BGCOLOR = white>    
+    <p>Текст1</p>
+    <p>Текст2</p>
+    <p>Текст3</p>
+    <input type="text" value="" id="result">
+    
+    <script>
+        const resultInput = document.getElementById('result');
+        const clickable = document.querySelectorAll('p');
+        let count = 0;
+        
+        clickable.forEach((item) => {
+            item.addEventListener('click', function() {
+                count++;
+                resultInput.value = count;
+            });
+        });  
+    </script> 
+</body>
+</html>
