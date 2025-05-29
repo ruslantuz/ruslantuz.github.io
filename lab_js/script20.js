@@ -15,6 +15,7 @@ x.lineWidth = 3;
 x.stroke();
 
 // Квадратична крива
+x.beginPath();
 x.moveTo(310,100);
 x.quadraticCurveTo(380,50,460,210);
 x.strokeStyle="red"; 
@@ -29,7 +30,7 @@ x.stroke();
 // Текст
 x.font='22px Impact';
 x.fillStyle='#65036c';
-x.fillText("Відображаємо текст",210,40); 
+x.fillText("Виконав",210,40); 
 
 // Геолокація
 var lat = document.getElementById("latitude");
@@ -45,5 +46,20 @@ function failGeo(err){
 
 var options = {
  enableHighAccuracy: true};
- 
+
 navigator.geolocation.getCurrentPosition(printGeo, failGeo, options);
+
+// Таймер
+var title = document.getElementById("title");
+var rgb = 0;
+title.style.color = `rgb(${rgb},${rgb},${rgb})`;
+
+function colorChange(){
+    rgb += 1;
+    title.style.color = `rgb(${rgb},${rgb},${rgb})`;
+    if (rgb == 255){
+        rgb = 0;
+    }
+}
+
+setInterval(colorChange, 50);
